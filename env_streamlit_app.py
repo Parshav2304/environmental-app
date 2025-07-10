@@ -5,8 +5,15 @@ from transformers import pipeline
 import torch
 from diffusers import StableDiffusionPipeline
 import spacy
+import spacy.cli  # 👈 Added for downloading model
 import networkx as nx
 import matplotlib.pyplot as plt
+
+# ----- Ensure spaCy Model is Available -----
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    spacy.cli.download("en_core_web_sm")
 
 # ----- Set Page Config -----
 st.set_page_config(page_title="Environmental AI Toolkit", layout="wide")
