@@ -1,0 +1,8 @@
+streamlit
+transformers
+torch
+diffusers
+scikit-learn
+spacy
+matplotlib
+networkx
